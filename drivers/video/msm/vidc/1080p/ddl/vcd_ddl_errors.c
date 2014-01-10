@@ -1,4 +1,4 @@
-/* Copyright (c) 2010-2012, Code Aurora Forum. All rights reserved.
+/* Copyright (c) 2010-2012, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -70,6 +70,7 @@ static u32 ddl_handle_hw_fatal_errors(struct ddl_client_context *ddl)
 	case VIDC_1080P_ERROR_MEM_ALLOCATION_FAILED:
 	case VIDC_1080P_ERROR_INSUFFICIENT_CONTEXT_SIZE:
 	case VIDC_1080P_ERROR_DIVIDE_BY_ZERO:
+	case VIDC_1080P_ERROR_DESCRIPTOR_BUFFER_EMPTY:
 	case VIDC_1080P_ERROR_DMA_TX_NOT_COMPLETE:
 	case VIDC_1080P_ERROR_VSP_NOT_READY:
 	case VIDC_1080P_ERROR_BUFFER_FULL_STATE:
@@ -241,7 +242,6 @@ static u32 ddl_handle_core_recoverable_errors(
 	case VIDC_1080P_ERROR_HEADER_NOT_FOUND:
 	case VIDC_1080P_ERROR_SLICE_PARSE_ERROR:
 	case VIDC_1080P_ERROR_NON_PAIRED_FIELD_NOT_SUPPORTED:
-        case VIDC_1080P_ERROR_DESCRIPTOR_BUFFER_EMPTY:
 		vcd_status = VCD_ERR_BITSTREAM_ERR;
 		DDL_MSG_ERROR("VIDC_BIT_STREAM_ERR");
 		break;
